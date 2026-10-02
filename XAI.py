@@ -21,8 +21,9 @@ shap.initjs()
 # %% [markdown]
 # Load the dataset
 
-# %%
-df = pd.read_csv("/usercode/Census_Income.csv")
+import os
+csv_path = "Census_Income.csv" if os.path.exists("Census_Income.csv") else "/usercode/Census_Income.csv"
+df = pd.read_csv(csv_path)
 df.head()
 
 # %% [markdown]
